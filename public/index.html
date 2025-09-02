@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DSS Estrés Académico</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <section class="card">
+      <h3>Distribución por segmento</h3>
+      <canvas id="segmentsChart" height="140"></canvas>
+    </section>
+
+    <section class="card">
+      <h3>Cargar CSV</h3>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required />
+        <button class="btn" type="submit">Subir</button>
+      </form>
+      <p id="uploadMsg" class="muted"></p>
+    </section>
+
+    <section class="card" style="grid-column: 1 / -1;">
+      <h3>Estudiantes</h3>
+      <div class="table-wrap">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>ID</th><th>Nombre</th><th>Año</th><th>Score</th><th>Segmento</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" style="grid-column: 1 / -1;">
+      <h3>Correlaciones</h3>
+      <div id="corrTable"></div>
+    </section>
+  </div>
+
+  <div id="recModal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="recModalTitle">
+      <header class="modal__header">
+        <h3 id="recModalTitle">Recomendaciones del estudiante</h3>
+        <button class="modal__close" data-close aria-label="Cerrar">×</button>
+      </header>
+      <div class="modal__body">
+        <div class="modal__grid">
+          <div>
+            <h4>Resumen</h4>
+            <div id="recSummary"></div>
+          </div>
+          <div>
+            <h4>Recomendaciones</h4>
+            <ul id="recList" class="list"></ul>
+          </div>
+        </div>
+      </div>
+      <footer class="modal__footer">
+        <button class="btn" data-close>Cerrar</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/dashboard.js"></script>
+</body>
+</html>

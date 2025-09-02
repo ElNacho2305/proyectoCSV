@@ -1,0 +1,25 @@
+{
+  "name": "early-stress-dss",
+  "version": "1.1.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node src/server.js",
+    "resetdb": "prisma migrate reset --force",
+    "migrate": "prisma migrate dev --name init",
+    "generate": "prisma generate",
+    "studio": "prisma studio"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "@prisma/client": "^5.22.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}
