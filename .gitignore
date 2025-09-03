@@ -1,0 +1,48 @@
+# ============================
+# Node.js general
+# ============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# ============================
+# Logs
+# ============================
+*.log
+logs
+*.pid
+*.seed
+*.pid.lock
+
+# ============================
+# Build / Dist
+# ============================
+dist/
+build/
+.cache/
+.next/
+out/
+tmp/
+temp/
+
+# ============================
+# OS / Editor
+# ============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ============================
+# Coverage / Testing
+# ============================
+coverage/
+.nyc_output/
+.jest/
